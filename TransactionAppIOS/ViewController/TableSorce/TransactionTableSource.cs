@@ -8,37 +8,34 @@ using UIKit;
 
 namespace TransactionAppIOS.ViewController
 {
-	public class RootTableSource : UITableViewSource
+	public class TransactionTableSource : UITableViewSource
 	{
 		// there is NO database or storage of Tasks in this example, just an in-memory List<>
-		TransactionItem[] tableItems;
-		string cellIdentifier = "taskcell"; // set in the Storyboard
+		List<TransactionItem> transactionItems;
+		string cellIdentifier = "transaction_Cell"; // set in the Storyboard
 
-		public RootTableSource(TransactionItem[] items)
+		public TransactionTableSource(List<TransactionItem> items)
 		{
-			tableItems = items;
+			transactionItems = items;
 		}
 
 		public override nint RowsInSection(UITableView tableview, nint section)
 		{
-			return tableItems.Length;
+			return transactionItems.Count();
 		}
 
 		public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
 		{
 			// in a Storyboard, Dequeue will ALWAYS return a cell, 
-			var cell = tableView.DequeueReusableCell(cellIdentifier);
+			var cell = (TransactionTableCell)tableView.DequeueReusableCell(cellIdentifier);
+			TransactionItem transactionItem = transactionItems[indexPath.Row];
 			// now set the properties as normal
-			cell.TextLabel.Text = tableItems[indexPath.Row].name;
-			if (tableItems[indexPath.Row].status)
-				cell.Accessory = UITableViewCellAccessory.Checkmark;
-			else
-				cell.Accessory = UITableViewCellAccessory.None;
+			cell.updateCell(transactionItem);
 			return cell;
 		}
 		public TransactionItem GetItem(int id)
 		{
-			return tableItems[id];
+			return transactionItems[id];
 		}
 	}
 }

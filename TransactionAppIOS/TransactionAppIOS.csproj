@@ -68,7 +68,6 @@
     <Compile Include="Model\TransactionItem.cs" />
     <Compile Include="RemoteService\URl.cs" />
     <Compile Include="services\TransactionService.cs" />
-    <Compile Include="ViewController\RootTableSource.cs" />
     <Compile Include="ViewController\TansactionItemController.cs" />
     <Compile Include="ViewController\TansactionItemController.designer.cs">
       <DependentUpon>TansactionItemController.cs</DependentUpon>
@@ -78,6 +77,15 @@
     <Content Include="Entitlements.plist" />
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
+    <Compile Include="ViewController\TransactionTableCell.cs" />
+    <Compile Include="ViewController\TransactionTableCell.designer.cs">
+      <DependentUpon>TransactionTableCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\TableSorce\TransactionTableSource.cs" />
+    <Compile Include="ViewController\TransactiopnDetailsViewController.cs" />
+    <Compile Include="ViewController\TransactiopnDetailsViewController.designer.cs">
+      <DependentUpon>TransactiopnDetailsViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -142,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="ViewController\TableSorce\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

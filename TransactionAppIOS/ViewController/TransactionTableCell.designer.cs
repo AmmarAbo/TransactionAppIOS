@@ -9,12 +9,13 @@ using System.CodeDom.Compiler;
 
 namespace TransactionAppIOS
 {
-	[Register ("TansactionItemController")]
-	partial class TansactionItemController
+	[Register("TransactionTableCell")]
+	partial class TransactionTableCell
 	{
-		
-		void ReleaseDesignerOutlets ()
+
+		void ReleaseDesignerOutlets()
 		{
+
 		}
 	}
 }

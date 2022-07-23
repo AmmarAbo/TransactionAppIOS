@@ -9,8 +9,8 @@ using System.CodeDom.Compiler;
 
 namespace TransactionAppIOS
 {
-	[Register ("TansactionItemController")]
-	partial class TansactionItemController
+	[Register ("TransactiopnDetailsViewController")]
+	partial class TransactiopnDetailsViewController
 	{
 		
 		void ReleaseDesignerOutlets ()
